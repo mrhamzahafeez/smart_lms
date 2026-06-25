@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-const highlights = [
+const features = [
   "Role-based dashboards for admins, teachers, and students",
-  "Course-scoped learning workspaces and collaboration",
-  "Ready for Clerk, Prisma, and AI-assisted study flows",
+  "College learning workflows with secure authentication",
+  "A foundation ready for courses and enrollments",
 ];
 
 export default function Home() {
@@ -11,6 +11,7 @@ export default function Home() {
     <main className="min-h-screen bg-bg-base px-6 py-10 text-text-primary">
       <section className="mx-auto flex min-h-[calc(100vh-5rem)] w-full max-w-6xl flex-col justify-center gap-10">
         <div className="max-w-3xl">
+
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.18em] text-text-muted">
             Smart Campus LMS & ERP
           </p>
@@ -18,19 +19,21 @@ export default function Home() {
             SmartLMS
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-text-muted">
-            A calm, role-aware foundation for Intermediate colleges to manage
-            academics, learning workflows, communication, and future AI study
-            assistance from one system.
+            Smart Campus LMS & ERP for Intermediate colleges (Grade 11 & 12)
+            — built for secure roles, real academic workflows, and dependable
+            administration.
           </p>
         </div>
 
         <div className="grid gap-4 md:grid-cols-3">
-          {highlights.map((highlight) => (
+          {features.map((feature) => (
             <div
-              key={highlight}
+              key={feature}
+
               className="rounded-2xl border border-border-subtle bg-bg-surface p-5 text-sm leading-6 text-text-muted"
             >
-              {highlight}
+              {feature}
+
             </div>
           ))}
         </div>

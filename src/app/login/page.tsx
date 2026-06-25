@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+
 
 import { loginSchema } from "@/types/auth";
 
@@ -148,10 +148,7 @@ export default function LoginPage() {
 
         {/* Footer */}
         <p className="text-center text-sm text-gray-600">
-          Don&apos;t have an account?{" "}
-          <Link href="/signup" className="font-medium text-blue-600 hover:text-blue-500">
-            Sign up
-          </Link>
+          Contact your college administration to request an account.
         </p>
       </div>
     </div>
