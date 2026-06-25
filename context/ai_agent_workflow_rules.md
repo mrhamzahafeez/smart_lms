@@ -31,7 +31,7 @@ If a unit can't be verified end-to-end on its own (e.g. "did the API return the 
 Do not modify the following unless a task explicitly instructs it:
 - `components/ui/*` (Shadcn UI primitives)
 - Generated Prisma client output (`prisma/generated/*` or equivalent)
-- Clerk SDK internals and Clerk-provided UI components (extend via configuration/props, not by editing the package)
+- Authentication provider SDK internals and provider-provided UI components (extend via configuration/props, not by editing the package)
 - Any third-party library internals (LangChain, vector-store SDKs, Mongo/Redis drivers)
 
 Project-specific logic, layout, and styling changes belong in app-level components and `lib/` modules — never in the files above. If a foundation component genuinely must change (e.g. a Shadcn component needs a new variant), that change must be called out as its own unit, not bundled silently into a feature change.

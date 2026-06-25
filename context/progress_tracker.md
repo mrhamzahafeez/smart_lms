@@ -10,7 +10,25 @@ Update this file whenever the current phase, active feature, or implementation s
 
 - Implement `context/feature_specs/02-authentication.md` exactly against the current repository state.
 
+## Completed (Phase 2+) - Admin Management
+
+- ✅ Implemented `04-admin-management.md` core requirements:
+  - Added **Admin Dashboard**: `GET /admin/dashboard` (DB-backed user + course statistics)
+  - Added **Admin API routes** with admin-only enforcement:
+    - `GET/POST /api/admin/students`
+    - `GET/PUT /api/admin/students/[id]`
+    - `GET/POST /api/admin/teachers`
+    - `GET/PUT /api/admin/teachers/[id]`
+  - Added admin UI pages:
+    - `GET /admin/students` (list + create + soft activate/deactivate)
+    - `GET /admin/teachers` (list + create + soft activate/deactivate)
+  - Password hashing on admin-created users:
+    - Student initial password = Roll Number
+    - Teacher initial password = Serial Number
+  - Duplicate prevention enforced via unique checks (email + role-specific unique fields)
+
 ## Completed
+
 
 - Verified existing Next.js App Router, TypeScript, Tailwind CSS, ESLint, and npm setup.
 - Installed missing setup dependencies: `clsx`, `tailwind-merge`, `lucide-react`, `prettier`, and `prettier-plugin-tailwindcss`.
@@ -42,6 +60,16 @@ Update this file whenever the current phase, active feature, or implementation s
   - Created login page at `/login` with email/password form and error handling
   - Fixed TypeScript and ESLint errors (Zod issues, missing types)
   - Validated implementation: `npm run lint` ✓, `npx tsc --noEmit` ✓
+
+  - **✅ Implemented Context Alignment & Role-Based Authorization** (Phase 2+):
+    - Updated documentation to reflect JWT-based authentication and removed Clerk-specific wording in context files:
+      - `context/ai_agent_workflow_rules.md` (provider-agnostic wording)
+      - `context/project_uidesign.md` (provider-agnostic user menu)
+    - Added authorization utilities:
+      - `src/lib/authorization.ts` (exports `requireAuth`, `requireRole`, `requireAdmin`, `requireTeacher`, `requireStudent`)
+    - Added middleware to enforce role-based access for dashboard and API routes:
+      - `src/middleware.ts` (matches `/admin/*`, `/teacher/*`, `/student/*` and `/api/*` namespaces)
+    - Notes: middleware uses the existing `verifyToken` helper from `src/lib/auth.ts` to validate the session cookie and redirects unauthorized access to `/unauthorized`.
 
 ## In Progress
 

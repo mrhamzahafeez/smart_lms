@@ -41,7 +41,7 @@ SmartLMS uses a clean, professional "academic SaaS" aesthetic — closer to Noti
 Role accent colors are subtle (used on active nav item, role badge, and dashboard header underline only) — they reinforce "which dashboard am I in" without turning each dashboard into a different product.
 
 ## Layout Structure (shared across dashboards)
-- **Top Navbar** (fixed): logo, current role badge, global search, notification bell (dropdown), theme toggle, user menu (Clerk UserButton-style).
+- **Top Navbar** (fixed): logo, current role badge, global search, notification bell (dropdown), theme toggle, user menu (auth provider user menu).
 - **Left Sidebar** (collapsible): role-specific nav items per the PRD's site map (Section 7.12), grouped logically (e.g. Teacher: Courses → Students → Attendance → Notes → Assignments → Grading, then Communities/Project Workspace, then AI Assistant, then Announcements/Messages/Settings at the bottom).
 - **Main Workspace**: page header (title + primary action button, right-aligned) + content area. Content area uses cards/tables/charts, never raw unstyled lists.
 - **Right-side AI Panel** (Teacher/Student only): slide-in overlay, doesn't push main content — consistent with the AI Assistant being "always one click away" without being the default view.
